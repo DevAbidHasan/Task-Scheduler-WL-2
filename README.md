@@ -125,31 +125,32 @@ Response Example:
 GET /tasks/:id
 ```
 Fetch a single task by its ID.
+```
+| Case               | Example Endpoint | Status  | Response |
+|                    |                  |         |----------|
+| ✅ Valid ID       | `/tasks/3`        | 200    | Task object |
+| ❌ Not Found      | `/tasks/999`      | 404    | `{ "error": "Task not found" }` |
+| ❌ Invalid Format | `/tasks/abc`      | 400    | `{ "error": "Invalid ID format" }` |valid Format	/tasks/abc	400	{ "error": "Invalid ID format" }
+```
+🧪 **Postman Testing**
+1. Import your API endpoints into Postman.
 
-Case	Example	Status	Response
-✅ Valid ID	/tasks/3	200	Task object
-❌ Not Found	/tasks/999	404	{ "error": "Task not found" }
-❌ Invalid Format	/tasks/abc	400	{ "error": "Invalid ID format" }
+2. Test each endpoint (GET /, /health, /tasks, /tasks/:id).
 
-🧪 Postman Testing
-Import your API endpoints into Postman.
-
-Test each endpoint (GET /, /health, /tasks, /tasks/:id).
-
-Save successful responses:
-
+3. Save successful responses:
+```
 /tasks → tasks-response.json
 
 /tasks/:id tests → document in api-responses.txt
+```
+4. Verify error handling for invalid or missing tasks.
 
-Verify error handling for invalid or missing tasks.
-
-🧰 Technologies Used
-Tech	Description
-Node.js	JavaScript runtime for backend
-Express.js	Lightweight web framework for APIs
-Nodemon	Development server auto-reloader
-Postman	API testing tool
+🧰 **Technologies Used**
+---
+1. Node.js	(JavaScript runtime for backend)
+2. Express.js	(Lightweight web framework for APIs)
+3. Nodemon	(Development server auto-reloader)
+4. Postman	(API testing tool)
 
 
 

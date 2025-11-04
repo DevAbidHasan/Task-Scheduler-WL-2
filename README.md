@@ -1,4 +1,4 @@
-# 🧩 Task Scheduler API
+# 🧩 Task Scheduler
 
 A simple and beginner-friendly **Node.js + Express.js REST API** for managing tasks.  
 This project demonstrates key backend development concepts like **routing**, **modularization**, **error handling**, and **API testing with Postman**.
@@ -63,26 +63,31 @@ Server should start at:
 http://localhost:3000
 ```
 🌐 API Endpoints
+---
 🔹 Root Endpoint
 ```
 GET /
 ```
 Returns a welcome message confirming the API is active.
+---
 Response: 
 
 
 "Task Management API is running!"
+---
 🔹 Health Check
 ```
 GET /health
 ```
 Returns current API status and uptime.
+---
 Response:
 
 {
   "status": "healthy",
   "uptime": 23.4567
 }
+---
 🔹 Get All Tasks
 ```
 GET /tasks
@@ -99,7 +104,7 @@ completed
 priority (low, medium, high)
 
 createdAt
-
+---
 Response Example:
 
 ```
@@ -114,6 +119,7 @@ Response Example:
   ...
 ]
 ```
+---
 🔹 Get Task by ID
 ```
 GET /tasks/:id
@@ -145,13 +151,5 @@ Express.js	Lightweight web framework for APIs
 Nodemon	Development server auto-reloader
 Postman	API testing tool
 
-🧑‍💻 Author
-Abid Hasan Plabon
-📍 Bangladesh
-💼 GitHub: @your-username
-✉️ Email: your.email@example.com
 
-📄 License
-This project is open-source under the MIT License.
-You are free to use, modify, and distribute it with attribution.
 

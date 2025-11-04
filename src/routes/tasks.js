@@ -9,14 +9,19 @@ const tasks = [
   { id: 5, title: 'Deploy to Render', completed: false, priority: 'high', createdAt: new Date() }
 ];
 
-
 router.get('/', (req, res) => {
   res.json(tasks);
 });
 
-
 router.get('/:id', (req, res) => {
-  const id = parseInt(req.params.id);
+  const idParam = req.params.id;
+
+
+  if (!/^\d+$/.test(idParam)) {
+    return res.status(400).json({ error: 'Invalid ID format' });
+  }
+
+  const id = parseInt(idParam);
   const task = tasks.find(t => t.id === id);
 
   if (!task) {
